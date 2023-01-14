@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <form action="/users/<%= user.userId %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="hidden" name="userId" value="<%= user.userId %>">
+        <label>
+            Username:
+            <input type="text" name="username" value="<%= user.username %>">
+        </label>
+        <br>
+        <label>
+            Name:
+            <input type="text" name="name" value="<%= user.name %>">
+        </label>
+        <br>
+        <label>
+            Email:
+            <input type="email" name="email" value="<%= user.email %>">
+        </label>
+        <br>
+        <label>
+            Age:
+            <input type="number" name="age" value="<%= user.age %>">
+        </label>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+  </body>
+</html>
+

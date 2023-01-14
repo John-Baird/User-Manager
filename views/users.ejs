@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% users.forEach(function(user) { %>
+            <tr>
+                <td><%= user.username %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.age %></td>
+                <td>
+                    <form>
+                        <a href="/users/<%= user.userId %>/edit">Edit</a>
+                        <input type="hidden" id="userId" value="<%= user.userId %>">
+                        <input type="button" value="Delete" onclick="deleteUser()">
+                    </form>
+                    
+                    <script>
+                        function deleteUser() {
+                            const userId = document.getElementById('userId').value;
+                            fetch(`/users/${userId}`, {
+                                method: 'DELETE'
+                            })
+                            .then(() => {
+                                location.reload();
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                    </script>
+                </td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+  </body>
+</html>
+

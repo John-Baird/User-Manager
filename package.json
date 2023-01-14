@@ -1,0 +1,26 @@
+{
+  "name": "usermanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/John-Baird/User-Manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/John-Baird/User-Manager/issues"
+  },
+  "homepage": "https://github.com/John-Baird/User-Manager#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "path": "^0.12.7"
+  }
+}
