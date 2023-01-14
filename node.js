@@ -43,7 +43,7 @@ app.post('/users', (req, res) => {
     users.push(newUser);
     fs.writeFile('users.json', JSON.stringify(users), (err) => {
       if (err) throw err;
-      res.redirect('/users');
+      res.status(201).json(newUser);
     });
   });
 });
@@ -100,6 +100,11 @@ app.post('/users/:userId', (req, res) => {
 // Serve the create user form
 app.get('/create-user', (req, res) => {
 res.render('create-user');
+});
+
+
+app.get('/create-user', (req, res) => {
+  res.render('create-user');
 });
 
 // Start the server
